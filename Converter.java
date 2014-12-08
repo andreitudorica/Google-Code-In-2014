@@ -1,6 +1,10 @@
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
@@ -47,6 +51,8 @@ public class ReadJSON
 		JSONParser parser = new JSONParser();
 		try
 		{
+		PrintStream out = new PrintStream(new FileOutputStream("io/output.txt"));
+		System.setOut(out);
 		Object obj = parser.parse(new FileReader("io/input.txt"));
 		JSONObject json = (JSONObject) obj;
 		
@@ -54,7 +60,6 @@ public class ReadJSON
 		BSONObject bson = (BSONObject) JsonToBson(json);
 		System.out.println(bson);
 		System.out.println(BsonToJson(bson));
-		
 		}
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
