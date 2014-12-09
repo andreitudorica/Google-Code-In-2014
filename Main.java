@@ -21,17 +21,16 @@ public class ReadJSON
 	
 	public static void main(String[] args)
 	{
-		JSONObject json = JBUtils.ReadJSONfromFile("io/example.json");
-		JBUtils.PrintJSONtoFile(json, "io/example.json");
+		String json_imput_name="io/JSONInput";
+		JSONObject json = JBUtils.ReadJSONfromFile(json_imput_name);
 		BSONObject bson = JBUtils.JsonToBson(json);
-		JBUtils.PrintBSONtoFileDecoded(bson, "io/example.bson");
-		JBUtils.PrintBSONtoFileEncoded(bson, "io/example.bson");
+		JBUtils.PrintBSONtoFileDecoded(bson, json_imput_name);
+		JBUtils.PrintBSONtoFileEncoded(bson, json_imput_name);
 		////////////////////////////////////////////////////////////////
-		BSONObject bson1 =JBUtils.ReadBSONfromFile("io/example.bson");
-		JBUtils.PrintBSONtoFileDecoded(bson1, "io/example.bson");
-		JBUtils.PrintBSONtoFileEncoded(bson1, "io/example.bson");
+		String bson_imput_name="io/BSONInput";
+		BSONObject bson1 =JBUtils.ReadBSONfromFile(bson_imput_name);
 		JSONObject json1= JBUtils.BsonToJson(bson1);
-		JBUtils.PrintJSONtoFile(json1, "io/example.json");
+		JBUtils.PrintJSONtoFile(json1, bson_imput_name);
 	}
 	
 }
