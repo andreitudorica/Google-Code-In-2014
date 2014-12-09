@@ -10,7 +10,7 @@ PrintJSONtoFile        | it takes as parameters the JSONObject and the path of t
 PrintBSONtoFileDecoded | it takes as parameters the BSONObject and the path of the output file, converts the BSONObject into a string and prints it.
 PrintBSONtoFileEncoded | it takes as parameters the BSONObject and the path of the output file, converts the BSONObject into a byte array, the byte array into a string and prints it.
 JSONtoBSON             | it takes as a parameter the JSONObject, converts it into a decoded BSONObject and returns it.
-JSONtoBSON             | it takes as a parameter the decoded BSONObject, converts it into a JSONObject and returns it.
+BSONtoJSON             | it takes as a parameter the decoded BSONObject, converts it into a JSONObject and returns it.
 
 the Main.java file contains just the calls to the functions previously described.
 GCI task
