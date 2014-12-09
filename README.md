@@ -1,10 +1,16 @@
-JSONtoBSONandBSONtoJSON
+JSON-BSON and BSON-JSON converter
 =======================
-This is a java program to do BSON to JSON and JSON to BSON conversion.
-the main.java code has 2 parts. 
-The first one reads a JSON from a given path by calling the ReadJSONfromFile function and using as a parameter the path to the JSON file(in my case io/JSONInput.txt). Then it prints the JSONObject to a certain path by calling the PrintJSONtoFile function and using as parameters the JSONObject and the path to the output file (in my case io/JSONOutput1.txt). After that it converts the JSONObject into a BSONObject by calling the function JSONtoBSON and using the JSONObject as a parameter. Afterwards it Prints the decoded and the encoded version of the BSONObject to certain paths by calling the PrintBSONtoFileDecoded and the PrintBSONtoFileEncoded functions and using as parameter for each of the the wanted output files (in my case io/BSONOutput1Encoded.txt and io/BSONOutput1Decoded.txt);
-The second part does the same thing but for BSON. Long story short it reads the binary form of the BSON from a file, prints its encoded and decoded form, converts it into JSON (BSONtoJSON function) and prints the JSONObject.
+The JBUtils.java file contains 7 functions: 
 
-the JBUtils.java code contains the definition of all the functions used in the Main.java code.
+Function               | Description
+-----------------------|-------------
+ReadJSONfromFile       |it takes as a parameter the path of the input file, reads a string, converts it into a JSONObject and returns it.
+ReadBSONfromFile       |  it takes as a parameter the path of the input file, reads a byte array, deserialises it into a BSONObject and returns it.
+PrintJSONtoFile        | it takes as parameters the JSONObject and the path of the output file, converts the JSONObject into a string and prints it.
+PrintBSONtoFileDecoded | it takes as parameters the BSONObject and the path of the output file, converts the BSONObject into a string and prints it.
+PrintBSONtoFileEncoded | it takes as parameters the BSONObject and the path of the output file, converts the BSONObject into a byte array, the byte array into a string and prints it.
+JSONtoBSON             | it takes as a parameter the JSONObject, converts it into a decoded BSONObject and returns it.
+JSONtoBSON             | it takes as a parameter the decoded BSONObject, converts it into a JSONObject and returns it.
 
+the Main.java file contains just the calls to the functions previously described.
 GCI task
