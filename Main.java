@@ -21,17 +21,17 @@ public class ReadJSON
 	
 	public static void main(String[] args)
 	{
-		JSONObject json = JBUtils.ReadJSONfromFile("io/JSONInput.txt");
-		JBUtils.PrintJSONtoFile(json, "io/JSONOutput1.txt");
+		JSONObject json = JBUtils.ReadJSONfromFile("io/example.json");
+		JBUtils.PrintJSONtoFile(json, "io/example.json");
 		BSONObject bson = JBUtils.JsonToBson(json);
-		JBUtils.PrintBSONtoFileDecoded(bson, "io/BSONOutput1Decoded.txt");
-		JBUtils.PrintBSONtoFileEncoded(bson, "io/BSONOutput1Encoded.txt");
+		JBUtils.PrintBSONtoFileDecoded(bson, "io/example.bson");
+		JBUtils.PrintBSONtoFileEncoded(bson, "io/example.bson");
 		////////////////////////////////////////////////////////////////
-		BSONObject bson1 =JBUtils.ReadBSONfromFile("io/BSONInput.txt");
-		JBUtils.PrintBSONtoFileDecoded(bson1, "io/BSONOutput2Decoded.txt");
-		JBUtils.PrintBSONtoFileEncoded(bson1, "io/BSONOutput2Encoded.txt");
+		BSONObject bson1 =JBUtils.ReadBSONfromFile("io/example.bson");
+		JBUtils.PrintBSONtoFileDecoded(bson1, "io/example.bson");
+		JBUtils.PrintBSONtoFileEncoded(bson1, "io/example.bson");
 		JSONObject json1= JBUtils.BsonToJson(bson1);
-		JBUtils.PrintJSONtoFile(json1, "io/JSONOutput2.txt");
+		JBUtils.PrintJSONtoFile(json1, "io/example.json");
 	}
 	
 }
